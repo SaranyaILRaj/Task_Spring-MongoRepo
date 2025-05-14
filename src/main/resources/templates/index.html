@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Employee Form</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container align-items-center justify-content-center">
+    <h1>Enter Employee Details</h1>
+    <form th:action="@{/add}" th:object="${employee}" method="post">
+        <div class="form-group row">
+            <div class="col-xs-2">
+                <label>Name:</label>
+                <input type="text" class="form-control" th:field="*{empName}" required/>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-xs-2">
+            <label>Email :</label>
+            <input type="email" class="form-control" th:field="*{empEmail}" required/>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-xs-2">
+            <label>Location:</label>
+            <input type="text" class="form-control" th:field="*{empLocation}" required/>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-success">Save</button>
+
+<!--        <label>Name: <input type="text"  /></label><br>-->
+<!--        <label>Email: <input type="email" th:field="*{empEmail}" required/></label><br>-->
+<!--        <label>Location: <input type="text" th:field="*{empLocation}" required/></label><br>-->
+<!--        <button type="submit">Submit</button>-->
+    </form>
+</div>
+</body>
+</html>
